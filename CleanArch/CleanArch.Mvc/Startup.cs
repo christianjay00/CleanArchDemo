@@ -1,4 +1,5 @@
 using CleanArch.Infra.Data.Context;
+using CleanArch.Infra.IoC;
 using CleanArch.Mvc.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -43,6 +44,8 @@ namespace CleanArch.Mvc
 
             });
 
+            RegisterServices(services);
+
 
             services.AddControllersWithViews();
 
@@ -81,5 +84,13 @@ namespace CleanArch.Mvc
                 endpoints.MapRazorPages();
             });
         }
+
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
+
+        }
+
     }
 }
