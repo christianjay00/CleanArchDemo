@@ -27,7 +27,7 @@ namespace CleanArch.Infra.Data.Repository
         }
 
 
-        public IEnumerable<Course> GetCourses()
+        public IQueryable<Course> GetCourses()
         {
             //throw new NotImplementedException();
             return _ctx.Courses;
